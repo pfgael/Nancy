@@ -306,6 +306,8 @@
 
         private static void OutputWithDefaultTransferEncoding(Response nancyResponse, HttpListenerResponse response)
         {
+            response.ContentLength64 = nancyResponse.ContentLength;
+            response.SendChunked = nancyResponse.Chunked;
             using (var output = response.OutputStream)
             {
                 nancyResponse.Contents.Invoke(output);

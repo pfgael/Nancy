@@ -48,6 +48,16 @@ namespace Nancy
         public IDictionary<string, string> Headers { get; set; }
 
         /// <summary>
+        /// The length of the content
+        /// </summary>
+        public int ContentLength { get; set; }
+
+        /// <summary>
+        /// Whether to use chunked transfer encoding
+        /// </summary>
+        public bool Chunked { get; set; }
+
+        /// <summary>
         /// Gets or sets the HTTP status code that should be sent back to the client.
         /// </summary>
         /// <value>A <see cref="HttpStatusCode"/> value.</value>
